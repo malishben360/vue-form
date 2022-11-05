@@ -28,15 +28,8 @@
     </div>
 
     <h3>Extras</h3>
-    <div>
-      <input type="checkbox" v-model="event.extras.catering" class="field" />
-      <label>Catering</label>
-    </div>
-    <div>
-      <input type="checkbox" v-model="event.extras.music" class="field" />
-      <label>Live music</label>
-    </div>
-
+    <BaseCheckbox label="Catering" v-model="event.extras.catering" />
+    <BaseCheckbox label="Live music" v-model="event.extras.music" />
     <button type="submit" class="button badge -fill-gradient">Submit</button>
   </form>
 </template>
