@@ -325,4 +325,14 @@ select::ms-expand {
 .button.-icon-center {
   padding: 0 20px;
 }
+fieldset {
+  margin: 0;
+  border: 0;
+  padding: 0;
+}
+legend {
+  font-size: 24px;
+  font-weight: 700px;
+  margin-top: 20px;
+}
 </style>

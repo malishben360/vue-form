@@ -7,26 +7,32 @@
       v-model="event.category"
     />
 
-    <h3>Name & describe your event</h3>
+    <fieldset>
+      <legend>Name & describe your event</legend>
 
-    <BaseInput type="text" label="Title" v-model="event.title" />
+      <BaseInput type="text" label="Title" v-model="event.title" />
 
-    <BaseInput type="text" label="Description" v-model="event.description" />
+      <BaseInput type="text" label="Description" v-model="event.description" />
+    </fieldset>
 
-    <h3>Where is your event?</h3>
+    <fieldset>
+      <legend>Where is your event?</legend>
 
-    <BaseInput type="text" label="Location" v-model="event.location" />
-
-    <h3>Are pets allowed?</h3>
-    <BaseRadioGroup :options="petOptions" name="pets" v-model="event.pets" />
-
-    <h3>Extras</h3>
-    <div>
-      <BaseCheckbox label="Catering" v-model="event.extras.catering" />
-    </div>
-    <div>
-      <BaseCheckbox label="Live music" v-model="event.extras.music" />
-    </div>
+      <BaseInput type="text" label="Location" v-model="event.location" />
+    </fieldset>
+    <fieldset>
+      <legend>Are pets allowed?</legend>
+      <BaseRadioGroup :options="petOptions" name="pets" v-model="event.pets" />
+    </fieldset>
+    <fieldset>
+      <legend>Extras</legend>
+      <div>
+        <BaseCheckbox label="Catering" v-model="event.extras.catering" />
+      </div>
+      <div>
+        <BaseCheckbox label="Live music" v-model="event.extras.music" />
+      </div>
+    </fieldset>
     <button type="submit" class="button badge -fill-gradient">Submit</button>
   </form>
 </template>
