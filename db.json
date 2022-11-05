@@ -1,0 +1,28 @@
+{
+  "events": [
+    {
+      "category": "animal welfare",
+      "title": "Safe place pets",
+      "description": "Awareness for pets domestic violence",
+      "location": "Abuja",
+      "pets": 1,
+      "extras": {
+        "catering": true,
+        "music": true
+      },
+      "id": 1
+    },
+    {
+      "category": "animal welfare",
+      "title": "Safe place for all pets",
+      "description": "Awareness for pet domestic violence",
+      "location": "Abuja",
+      "pets": 1,
+      "extras": {
+        "catering": true,
+        "music": true
+      },
+      "id": 2
+    }
+  ]
+}

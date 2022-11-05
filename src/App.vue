@@ -1,7 +1,7 @@
 <template>
   <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
+    <router-link to="/">Simple Form</router-link> |
+    <router-link to="/component-form">Component Form</router-link>
   </nav>
   <router-view />
 </template>
@@ -23,6 +23,18 @@ body {
   width: 500px;
   padding: 0 20px 20px;
   margin: 0 auto;
+}
+nav {
+  padding: 30px;
+}
+
+nav a {
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+nav a.router-link-exact-active {
+  color: #42b983;
 }
 hr {
   box-sizing: content-box;
