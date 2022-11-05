@@ -1,13 +1,11 @@
 <template>
-  <div>
-    <input
-      :checked="modelValue"
-      type="checkbox"
-      class="field"
-      @change="$emit('update:modelValue', $event.target.checked)"
-    />
-    <label>{{ label }}</label>
-  </div>
+  <input
+    :checked="modelValue"
+    type="checkbox"
+    class="field"
+    @change="$emit('update:modelValue', $event.target.checked)"
+  />
+  <label v-if="label">{{ label }}</label>
 </template>
 
 <script>

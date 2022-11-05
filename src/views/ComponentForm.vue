@@ -19,17 +19,19 @@
 
     <h3>Are pets allowed?</h3>
     <div>
-      <input type="radio" v-model="event.pets" value="1" name="pets" />
-      <label>Yes</label>
+      <BaseRadio label="Yes" :value="1" name="pets" v-model="event.pets" />
     </div>
     <div>
-      <input type="radio" v-model="event.pets" value="0" name="pets" />
-      <label>No</label>
+      <BaseRadio label="No" :value="0" name="pets" v-model="event.pets" />
     </div>
 
     <h3>Extras</h3>
-    <BaseCheckbox label="Catering" v-model="event.extras.catering" />
-    <BaseCheckbox label="Live music" v-model="event.extras.music" />
+    <div>
+      <BaseCheckbox label="Catering" v-model="event.extras.catering" />
+    </div>
+    <div>
+      <BaseCheckbox label="Live music" v-model="event.extras.music" />
+    </div>
     <button type="submit" class="button badge -fill-gradient">Submit</button>
   </form>
 </template>
