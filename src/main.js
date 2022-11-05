@@ -14,6 +14,8 @@ const requireComponent = require.context(
   /Base[A-Z]\w+\.(vue|js)$/
 );
 
+const app = createApp(App);
+
 requireComponent.keys().forEach((fileName) => {
   // Get component config
   const componentConfig = requireComponent(fileName);
@@ -30,7 +32,7 @@ requireComponent.keys().forEach((fileName) => {
   );
 
   // Register component globally
-  App.component(
+  app.component(
     componentName,
     // Look for the component options on `.default`, which will
     // exist if the component was exported with `export default`,
@@ -39,4 +41,4 @@ requireComponent.keys().forEach((fileName) => {
   );
 });
 
-createApp(App).use(store).use(router).mount("#app");
+app.use(store).use(router).mount("#app");

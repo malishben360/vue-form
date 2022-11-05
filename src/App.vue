@@ -1,7 +1,7 @@
 <template>
   <nav>
     <router-link to="/">Simple Form</router-link> |
-    <router-link to="/about">Component Form</router-link>
+    <router-link to="/component-form">Component Form</router-link>
   </nav>
   <router-view />
 </template>
