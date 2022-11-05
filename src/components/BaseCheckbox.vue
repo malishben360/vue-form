@@ -1,5 +1,6 @@
 <template>
   <input
+    v-bind="$attrs"
     :checked="modelValue"
     type="checkbox"
     class="field"

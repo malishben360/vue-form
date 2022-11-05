@@ -2,7 +2,7 @@
   <component
     v-for="option in options"
     :key="option.value"
-    :class="{ vertical: !vertical }"
+    :class="{ horizontal: !vertical }"
     :is="vertical ? 'div' : 'span'"
   >
     <BaseRadio
@@ -41,7 +41,7 @@ export default {
 </script>
 
 <style scoped>
-.vertical {
+.horizontal {
   margin-left: 20px;
 }
 </style>

@@ -18,12 +18,7 @@
     <BaseInput type="text" label="Location" v-model="event.location" />
 
     <h3>Are pets allowed?</h3>
-    <BaseRadioGroup
-      :options="petOptions"
-      name="pets"
-      vertical
-      v-model="event.pets"
-    />
+    <BaseRadioGroup :options="petOptions" name="pets" v-model="event.pets" />
 
     <h3>Extras</h3>
     <div>
@@ -37,6 +32,8 @@
 </template>
 
 <script>
+import AxiosService from "@/services/AxiosService";
+
 export default {
   name: "ComponentForm",
 
@@ -70,7 +67,13 @@ export default {
   },
   methods: {
     onSubmit() {
-      console.log(this.event);
+      AxiosService.postEvent(this.event)
+        .then((response) => {
+          console.table(response.data);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
     },
   },
 };
