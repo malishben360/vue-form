@@ -3,11 +3,16 @@
     v-bind="$attrs"
     :checked="modelValue"
     type="checkbox"
+    @change="$emit('update:modelValue', $event.target.checked)"
     class="field"
     :id="uuid"
-    @change="$emit('update:modelValue', $event.target.checked)"
+    :aria-describedby="error ? `${uuid}-error` : ''"
+    :aria-invalid="error ? true : false"
   />
   <label :for="uuid" v-if="label">{{ label }}</label>
+  <p v-if="error" class="errorMessage" aria-live="assertive">
+    {{ error }}
+  </p>
 </template>
 
 <script>
@@ -24,6 +29,10 @@ export default {
     modelValue: {
       type: Boolean,
       default: false,
+    },
+    error: {
+      type: String,
+      default: "",
     },
   },
   setup() {

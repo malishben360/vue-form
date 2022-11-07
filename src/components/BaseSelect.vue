@@ -2,12 +2,14 @@
   <label :for="uuid" v-if="label">{{ label }}</label>
   <select
     :value="modelValue"
-    class="field"
-    :id="uuid"
     v-bind="{
       ...$attrs,
       onChange: ($event) => $emit('update:modelValue', $event.target.value),
     }"
+    class="field"
+    :id="uuid"
+    :aria-describedby="error ? `${uuid}-error` : null"
+    :aria-invalid="error ? true : false"
   >
     <option
       v-for="(option, index) in options"
@@ -18,6 +20,14 @@
       {{ option }}
     </option>
   </select>
+  <p
+    v-if="error"
+    class="errorMessage"
+    :id="`${uuid}-error`"
+    aria-live="assertive"
+  >
+    {{ error }}
+  </p>
 </template>
 
 <script>
@@ -37,6 +47,10 @@ export default {
     options: {
       type: Array,
       required: true,
+    },
+    error: {
+      type: String,
+      default: "",
     },
   },
   setup() {

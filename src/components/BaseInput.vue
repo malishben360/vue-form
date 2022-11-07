@@ -4,10 +4,20 @@
     v-bind="$attrs"
     :value="modelValue"
     :placeholder="label"
+    @input="$emit('update:modelValue', $event.target.value)"
     class="field"
     :id="uuid"
-    @input="$emit('update:modelValue', $event.target.value)"
+    :aria-describedby="error ? `${uuid}-error` : null"
+    :aria-invalid="error ? true : false"
   />
+  <p
+    v-if="error"
+    class="errorMessage"
+    :id="`${uuid}-error`"
+    aria-live="assertive"
+  >
+    {{ error }}
+  </p>
 </template>
 
 <script>
@@ -22,6 +32,10 @@ export default {
     },
     modelValue: {
       type: [String, Number],
+      default: "",
+    },
+    error: {
+      type: String,
       default: "",
     },
   },
